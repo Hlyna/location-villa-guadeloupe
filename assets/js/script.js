@@ -1,75 +1,54 @@
-$(document).ready(function() {
-  // Validation du formulaire de réservation
-  $('#reservationForm').submit(function(event) {
-      var isValid = true;
+// Attend que le document soit prêt
+$(document).ready(function () {
+  // Soumission du formulaire de réservation
+  $('#reservationForm').submit(function (e) {
+      e.preventDefault(); // Empêche le rechargement de la page
 
-      // Validation de la date d'arrivée
-      var startDate = new Date($('#startDate').val());
-      var endDate = new Date($('#endDate').val());
-      var today = new Date();
-
-      if (startDate >= endDate || startDate < today || endDate < today) {
-          $('#dateError').text('Veuillez entrer des dates valides.');
-          isValid = false;
-      } else {
-          $('#dateError').text('');
-      }
-
-      // Validation de l'adresse email
+      // Récupère les valeurs des champs du formulaire
+      var dateArrivee = $('#dateArrivee').val();
+      var dateDepart = $('#dateDepart').val();
+      var nombrePersonnes = $('#nombrePersonnes').val();
       var email = $('#email').val();
-      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(email)) {
-          $('#emailError').text('Veuillez entrer une adresse email valide.');
-          isValid = false;
-      } else {
-          $('#emailError').text('');
+      var telephone = $('#telephone').val();
+      var pays = $('#pays').val();
+
+      // Validation des champs
+      if (dateArrivee === '' || dateDepart === '' || nombrePersonnes === '' || email === '' || telephone === '' || pays === '') {
+          alert('Veuillez remplir tous les champs du formulaire.');
+          return;
       }
 
-      // Validation du numéro de téléphone
-      var phoneNumber = $('#phoneNumber').val();
-      var phonePattern = /^[0-9]{10}$/;
-      if (!phonePattern.test(phoneNumber)) {
-          $('#phoneError').text('Veuillez entrer un numéro de téléphone valide.');
-          isValid = false;
-      } else {
-          $('#phoneError').text('');
+      // Vérification du nombre de personnes
+      if (nombrePersonnes <= 0) {
+          alert('Veuillez entrer un nombre de personnes valide.');
+          return;
       }
 
-      // Si le formulaire est invalide, empêcher sa soumission
-      if (!isValid) {
-          event.preventDefault();
+      // Vérification des dates
+      var dateArriveeObj = new Date(dateArrivee);
+      var dateDepartObj = new Date(dateDepart);
+      var today = new Date();
+      if (dateArriveeObj <= today || dateDepartObj <= today || dateDepartObj <= dateArriveeObj) {
+          alert('Veuillez sélectionner des dates valides.');
+          return;
       }
-  });
 
-  // Envoi des informations de réservation par email
-  $('#reservationForm').submit(function(event) {
-      var formData = {
-          startDate: $('#startDate').val(),
-          endDate: $('#endDate').val(),
-          numberOfGuests: $('#numberOfGuests').val(),
-          email: $('#email').val(),
-          phoneNumber: $('#phoneNumber').val(),
-          country: $('#country').val()
-      };
+      // Vérification de l'e-mail
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+          alert('Veuillez entrer une adresse e-mail valide.');
+          return;
+      }
 
-      $.ajax({
-          type: 'POST',
-          url: 'send_email.php',
-          data: formData,
-          dataType: 'json',
-          encode: true
-      })
-      .done(function(data) {
-          console.log(data);
-          // Rediriger vers la page de confirmation
-          window.location.href = 'confirmation.html';
-      })
-      .fail(function(data) {
-          console.log(data);
-          // Afficher un message d'erreur en cas d'échec de l'envoi
-          alert('Une erreur est survenue lors de l\'envoi de votre réservation. Veuillez réessayer.');
-      });
+      // Envoi des données par e-mail (simulation)
+      var message = "Date d'arrivée: " + dateArrivee +
+          "\nDate de départ: " + dateDepart +
+          "\nNombre de personnes: " + nombrePersonnes +
+          "\nE-mail: " + email +
+          "\nTéléphone: " + telephone +
+          "\nPays: " + pays;
 
-      event.preventDefault();
+      alert('Votre réservation a été envoyée avec succès:\n\n' + message);
+      window.location.href = 'confirmation.html'; // Redirection vers la page de confirmation
   });
 });
