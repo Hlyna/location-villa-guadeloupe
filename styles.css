@@ -1,0 +1,11 @@
+/* styles.css */
+
+.navbar-nav > li {
+  margin-right: 80px; /* Ajoute une marge de 80 pixels entre chaque élément de la barre de navigation */
+}
+
+.navbar-right li {
+  margin-right: 200px; /* Ajoute une marge de 80 pixels à droite du bouton "Réserver" */
+  margin-left: 30px; /* Ajoute une marge de 80 pixels à droite du bouton "Réserver" */
+
+}

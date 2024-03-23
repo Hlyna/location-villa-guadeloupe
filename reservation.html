@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h1>Réservation</h1>
+        <form id="reservationForm" action="send_reservation.php" method="POST">
+            <!-- Champs du formulaire -->
+            <!-- Date d'arrivée -->
+            <div class="form-group">
+                <label for="startDate">Date d'arrivée</label>
+                <input type="date" class="form-control" id="startDate" name="startDate" required>
+            </div>
+            <!-- Date de départ -->
+            <div class="form-group">
+                <label for="endDate">Date de départ</label>
+                <input type="date" class="form-control" id="endDate" name="endDate" required>
+            </div>
+            <!-- Nombre de personnes -->
+            <div class="form-group">
+                <label for="numberOfGuests">Nombre de personnes</label>
+                <input type="number" class="form-control" id="numberOfGuests" name="numberOfGuests" required>
+            </div>
+            <!-- Adresse email -->
+            <div class="form-group">
+                <label for="email">Adresse email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+                <small id="emailError" class="form-text text-danger"></small>
+            </div>
+            <!-- Numéro de téléphone -->
+            <div class="form-group">
+                <label for="phoneNumber">Numéro de téléphone</label>
+                <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" required>
+                <small id="phoneError" class="form-text text-danger"></small>
+            </div>
+            <!-- Pays -->
+            <div class="form-group">
+                <label for="country">Pays</label>
+                <select class="form-control" id="country" name="country" required>
+                    <option value="" disabled selected>Choisir un pays</option>
+                    <option value="France">France</option>
+                    <option value="United States">United States</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <!-- Insérer ici la liste des pays -->
+                </select>
+            </div>
+            <!-- Bouton de soumission -->
+            <button type="submit" class="btn btn-primary">Réserver</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS, jQuery, and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

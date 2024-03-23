@@ -1,39 +1,80 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site Vitrine</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Lien vers l'icône favicon -->
+    <title>Villa Moloko</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <div class="header-content">
-                <img src="accueil.jpg" alt="Accueil" class="header-image"> <!-- Image à gauche -->
-                <h1>CYRUSS</h1> <!-- Texte à droite -->
+            <a class="navbar-brand" href="#">Nom de la villa</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#content">La Villa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#photos">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#map">Localisation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="reservation.html"><span class="glyphicon glyphicon-book"></span> Réserver</a>
+                </li>
+            </ul>
         </div>
-    </header>
-    <div class="container">
-        <div class="content">
-            <!-- Bouton LinkedIn -->
-            <a href="https://www.linkedin.com/company/102812225/admin/feed/posts/?feedType=following" class="btn linkedin" target="_blank">LinkedIn</a>
-            <!-- Bouton Sondage -->
-            <a href="https://forms.office.com/r/5QKmc3E3dT" class="btn survey" target="_blank">Sondage</a>
+    </nav>
+
+    <div class="container mt-4" id="content">
+        <h1>Villa Moloko</h1>
+        <h3>Description</h3>
+        <p>Venez découvrir la Villa Moloko, une destination idéale pour vos vacances estivales. Nichée dans un cadre paisible à proximité du village d'Arcangues, notre villa offre un accès facile aux plages de Biarritz et au centre-ville de Bayonne. Découvrez le confort luxueux de nos chambres spacieuses, de notre piscine chauffée et de nos installations modernes.</p>
+        <!-- Autres détails sur la villa -->
+        <h3>Galerie Photo</h3>
+        <!-- Insérez ici la galerie photo -->
+    </div>
+
+    <!-- Photo Gallery Section -->
+    <div class="photos" id="photos">
+        <!-- Contenu de la galerie photo -->
+    </div>
+
+    <!-- Map Section -->
+    <div class="map text-center" id="map">
+        <h3 style="color: #171717; font-size: 20px; text-decoration:underline; margin-top: 30px;" data-aos="fade-up">Emplacement</h3>
+        <br>
+        <p class="text-center">La villa XX est proche du village XX et de son golf. A 10 minutes des plages de blabla et proche des infrastructures (à XX mn de la gare et de l'aéroport blabla)</p>
+        <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 800px;">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1HyHHqluWcRGRIEzPevtqGgqMgblZpp8&ehbc=2E312F" class="embed-responsive-item" width="640" height="480"></iframe>
         </div>
     </div>
-    <section id="about" class="container">
-        <h2>Notre Mission</h2>
-        <p>« CYRUSS a pour mission de révolutionner tout en simplifiant votre expérience immobilière. Nous mettons la technologie au service de l'humain en offrant des opportunités améliorées et optimisées à tous dans la recherche de biens. Notre engagement envers l'innovation, la qualité et la sécurité redéfinit la gestion immobilière en créant une expérience utilisateur exceptionnelle. Notre objectif est de permettre à nos utilisateurs de trouver un logement en 5 minutes, tout en œuvrant à minimiser notre impact environnemental. »</p>
-        <h2>Notre Vision</h2>
-        <p>« CYRUSS a pour vision de créer une communauté mondiale, inclusive et engagée, en façonnant un avenir où chaque individu trouve un logement idéal, chaque propriété est gérée efficacement, et où la technologie et l'humanité fusionnent pour créer un immobilier plus transparent, durable et accessible. Nous nous engageons à créer un impact social et environnemental en facilitant la vie de nos utilisateurs, et en révolutionnant la consommation de logements à l'échelle mondiale. »</p>
-    </section>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Mon Site Vitrine. Tous droits réservés.</p>
-        </div>
-    </footer>
+
+
+    <!-- Contact Section -->
+    <div class="contact" id="contact">
+        <h3 style="color: #171717; text-align: center; font-size: 20px; text-decoration:underline; margin-top: 30px;" data-aos="fade-up">Contact</h3>
+        <br>
+        <p>Ecrire un mail : <a href="mailto:lyna.hamza16@gmail.com" style="color: #171717; text-decoration:underline;">lyna.hamza16@gmail.com</a></p>
+        <p>N° de téléphone : <a href="tel:+4385302757" style="color: #171717; text-decoration:underline;">4385302757</a></p>
+    </div>
+
+    <!-- Bootstrap JS, jQuery, and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
