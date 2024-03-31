@@ -18,12 +18,6 @@ $(document).ready(function () {
           return;
       }
 
-      // Vérification du nombre de personnes
-      if (nombrePersonnes <= 0) {
-          alert('Veuillez entrer un nombre de personnes valide.');
-          return;
-      }
-
       // Vérification des dates
       var dateArriveeObj = new Date(dateArrivee);
       var dateDepartObj = new Date(dateDepart);
