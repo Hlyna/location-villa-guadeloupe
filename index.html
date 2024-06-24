@@ -3,299 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Villa</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Villa Rental in Guadeloupe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="images/logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("YOUR_USER_ID");
+        })();
+    </script>
 </head>
-<body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Nom de la villa</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
+<body onload="loadLanguage()">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ff6f61;">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="Logo" class="logo" style="height: 70px;">
+            </a>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#content">La Villa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#photos">Photos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#map">Localisation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#description" id="nav-description" style="color: white; font-size: 18px;">Description</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery" id="nav-gallery" style="color: white; font-size: 18px;">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#location" id="nav-location" style="color: white; font-size: 18px;">Location</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reservation" id="nav-reservation" style="color: white; font-size: 18px;">Reservation</a></li>
                 </ul>
             </div>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="reservation.html"><span class="glyphicon glyphicon-book"></span> Réserver</a>
-                </li>
-            </ul>
+            <select id="language-selector" onchange="changeLanguage()" class="form-control" style="width: auto;">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="es">Español</option>
+            </select>
+        </nav>
+    </header>
+
+    <section id="description" class="text-center">
+        <div class="container">
+            <h1 class="mt-4" id="title-welcome">Welcome to Our Villa in Guadeloupe</h1>
+            <p id="description-text">Description of the villa goes here...</p>
         </div>
-    </nav>
+    </section>
 
-    <div class="container mt-4" id="content">
-        <h1>Villa</h1>
-        <h3>Description</h3>
-        <p>Venez découvrir la Villa, une destination idéale pour vos vacances estivales. Nichée dans un cadre paisible à proximité du village d'Arcangues, notre villa offre un accès facile aux plages de Biarritz et au centre-ville de Bayonne. Découvrez le confort luxueux de nos chambres spacieuses, de notre piscine chauffée et de nos installations modernes.</p>
-        <!-- Autres détails sur la villa -->
-        <h3>Galerie Photo</h3>
-        <!-- Insérez ici la galerie photo -->
-    </div>
-
-    <!-- Photo Gallery Section -->
-    <div class="photos" id="photos">
-        <!-- Contenu de la galerie photo -->
-        <section class="photos" id="photos">
-
-            <h3 style="color: #171717; text-align: center; font-size: 20px; text-decoration:underline;" data-aos="fade-up">Description</h3>
-            <p data-aos="fade-up">Venez découvrir la villa Moloko, proche du village d'Arcangues et de son golf. A 10 minutes des plages de Biarritz et du centre-ville de Bayonne et proche des infrastructures (à 6 mn de la gare et de l'aéroport d'Anglet)</p>
-            
-            <p data-aos="fade-up">Avec sa piscine chauffée (volet) et sa dépendance vous pourrez profiter de journées calmes et bénéficier d'un environnement privilégié.
-            </p>
-            
-            <p data-aos="fade-up">La maison principale est composée d'un grand salon et salle à manger ainsi que d'une cuisine ouverte. Au rez-de-chaussée, vous trouverez également une suite parentale avec sa salle de bain et son dressing ainsi qu'une grande chambre, d'une salle d'eau avec douche à l'italienne et W.C. séparés. A l'étage, 3 chambres lit simple (possibilité 1 lit gigogne et 1 lit double) + une salle de bain avec baignoire. Au bors de la piscine, une dépendance de 60m² permet l'intimité pour un couple et maximum 2 enfants (lits superposés) grâce à sa grande chambre, sa salle de bain (douche à l'italienne + W.C. séparés), sa cuisine et salle à manger indépendante.</p>
-            
-            <h3 style="color: #171717; text-align: center; font-size: 20px; text-decoration:underline; margin-top: 30px;" data-aos="fade-up">Equipements</h3>
-            <p data-aos="fade-right">Dans la cuisine:</p>
-            <ul>
-                <li>2 frigos</li>
-                <li>Lave-vaisselle</li>
-                <li>1 buanderie avec lave-linge et sèche-linge</li>
-            </ul>
-            <br>
-            <p data-aos="fade-right">Dans la Suite Parentale:</p>
-            <ul>
-                <li>1 grand dressing</li>
-                <li>1 baignoire et 1 douche</li>
-            </ul>
-            <p data-aos="fade-right">Dans le salon:</p>
-            <ul>
-                <li>Equipement Sonos 5.1</li>
-                <li>MyCanal, Netflix, AppleMusic</li>
-            </ul>
-            <p data-aos="fade-right">Dans la Dépendance:</p>
-            <ul>
-                <li>Cuisine équipée</li>
-                <li>Salle d'eau</li>
-            </ul>
-            <p data-aos="fade-right">Dans le Jardin:</p>
-            <ul>
-                <li>1 piscine</li>
-                <li>1 table de ping-pong</li>
-                <li>1 plancha</li>
-            </ul>
-    
-            <div class="photos" id="photos">
-    
-                <h3 style="color: #171717; text-align: center; font-size: 20px; text-decoration:underline; margin-top: 30px;" data-aos="fade-up">Galerie Photo</h3>
-    
-                <span id="votre_id1" class="target">
-                </span>
-                <span id="votre_id2" class="target">
-                </span>
-                <span id="votre_id3" class="target">
-                </span>
-                <span id="votre_id4" class="target">
-                </span>
-                <div class="cadre_diapo">
-                <div class="interieur_diapo">
-                <div class=description>
-                <span>
-                Vue extérieure de la dépendance
-                </span>
-                <img src="assets/img/annexe.jpg" alt="vue exterieure dependance">
+    <section id="gallery" class="text-center">
+        <div class="container">
+            <h2 class="mt-4" id="title-gallery">Gallery</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="images/villa1.jpg" class="img-fluid" alt="Villa Image 1">
                 </div>
-                <div class=description>
-                <span>
-                Propriété vue du ciel
-                </span>
-                <img src="assets/img/maison_haut.jpg" alt="propriété vue du ciel">
+                <div class="col-md-4 mb-4">
+                    <img src="images/villa2.jpg" class="img-fluid" alt="Villa Image 2">
                 </div>
-                <div class=description>
-                <span>
-                La piscine
-                </span>
-                <img src="assets/img/piscine.jpg" alt="la piscine">
+                <div class="col-md-4 mb-4">
+                    <img src="images/villa3.jpg" class="img-fluid" alt="Villa Image 3">
                 </div>
-                <div class=description>
-                <span>
-                Façade nord
-                </span>
-                <img src="assets/img/vue_exterieure.jpg" alt="facade nord">
+                <div class="col-md-4 mb-4">
+                    <img src="images/villa4.jpg" class="img-fluid" alt="Villa Image 4">
                 </div>
+                <div class="col-md-4 mb-4">
+                    <img src="images/villa5.jpg" class="img-fluid" alt="Villa Image 5">
                 </div>
-                <ul class="navigation_diapo">
-                <li>
-                <a href="#votre_id1">
-                <img src="assets/img/annexe.jpg" alt="annexe">
-                </a>
-                </li>
-                <li>
-                <a href="#votre_id2">
-                <img src="assets/img/maison_haut.jpg" alt="façade nord">
-                </a>
-                </li>
-                <li>
-                <a href="#votre_id3">
-                <img src="assets/img/piscine.jpg" alt="piscine">
-                </a>
-                </li>
-                <li>
-                <a href="#votre_id4">
-                <img src="assets/img/vue_exterieure.jpg" alt="annexe">
-                </a>
-                </li>
-                </ul>
-                </div>
-    
-                <span id="votre_id5" class="target">
-                </span>
-                <span id="votre_id6" class="target">
-                </span>
-                <span id="votre_id7" class="target">
-                </span>
-                <span id="votre_id8" class="target">
-                </span>
-                <div class="cadre_diapo">
-                <div class="interieur_diapo">
-                <div class=description>
-                <span>
-                Pièce de vie
-                </span>
-                <img src="assets/img/salon.jpg" alt="vue exterieure dependance">
-                </div>
-                <div class=description>
-                <span>
-                Salles de bains
-                </span>
-                <img src="assets/img/cinq.jpg" alt="propriété vue du ciel">
-                </div>
-                <div class=description>
-                <span>
-                Chambre rez-de-chaussée
-                </span>
-                <img src="assets/img/ma_chambre.jpg" alt="la piscine">
-                </div>
-                <div class=description>
-                <span>
-                    Salle de bain rez-de-chaussée
-                </span>
-                <img src="assets/img/ma_sdb.jpg" alt="facade nord">
-                </div>
-                </div>
-                <ul class="navigation_diapo">
-                <li>
-                <a href="#votre_id1">
-                <img src="assets/img/salon.jpg" alt="annexe">
-                </a>
-                </li>
-                <li>
-                <a href="#votre_id2">
-                <img src="assets/img/cinq.jpg" alt="façade nord">
-                </a>
-                </li>
-                <li>
-                <a href="#votre_id3">
-                <img src="assets/img/ma_chambre.jpg" alt="piscine">
-                </a>
-                </li>
-                <li>
-                <a href="#votre_id4">
-                <img src="assets/img/ma_sdb.jpg" alt="annexe">
-                </a>
-                </li>
-                </ul>
-                </div>
-    
-                <span id="votre_id9" class="target">
-                </span>
-                <span id="votre_id10" class="target">
-                </span>
-                <span id="votre_id11" class="target">
-                </span>
-                <span id="votre_id12" class="target">
-                </span>
-                <div class="cadre_diapo">
-                <div class="interieur_diapo">
-                <div class=description>
-                <span>
-                Chambre Suite Parental
-                </span>
-                <img src="assets/img/suite_chalbre.jpg" alt="vue exterieure dependance">
-                </div>
-                <div class=description>
-                <span>
-                Salle de bain Suite Parental (1)
-                </span>
-                <img src="assets/img/suite_sdb1.jpg" alt="propriété vue du ciel">
-                </div>
-                <div class=description>
-                <span>
-                    Salle de bain Suite Parental (2)
-                </span>
-                <img src="assets/img/suite_sdb2.jpg" alt="la piscine">
-                </div>
-                <div class=description>
-                <span>
-                    Cuisine et entrée
-                </span>
-                <img src="assets/img/quatre.jpg" alt="facade nord">
-                </div>
-                </div>
-                <ul class="navigation_diapo">
-                <li>
-                <a href="#votre_id1">
-                <img src="assets/img/salon.jpg" alt="annexe">
-                </a>
-                </li>
-                <li>
-                <a href="#votre_id2">
-                <img src="assets/img/cinq.jpg" alt="façade nord">
-                </a>
-                </li>
-                <li>
-                <a href="#votre_id3">
-                <img src="assets/img/ma_chambre.jpg" alt="piscine">
-                </a>
-                </li>
-                <li>
-                <a href="#votre_id4">
-                <img src="assets/img/ma_sdb.jpg" alt="annexe">
-                </a>
-                </li>
-                </ul>
+                <div class="col-md-4 mb-4">
+                    <img src="images/villa6.jpg" class="img-fluid" alt="Villa Image 6">
                 </div>
             </div>
-    </div>
-</section>
-    <!-- Map Section -->
-    <div class="map text-center" id="map">
-        <h3 style="color: #171717; font-size: 20px; text-decoration:underline; margin-top: 30px;" data-aos="fade-up">Emplacement</h3>
-        <br>
-        <p class="text-center">La villa XX est proche du village XX et de son golf. A 10 minutes des plages de blabla et proche des infrastructures (à XX mn de la gare et de l'aéroport blabla)</p>
-        <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 800px;">
-            <iframe src="https://www.google.com/maps/d/embed?mid=1HyHHqluWcRGRIEzPevtqGgqMgblZpp8&ehbc=2E312F" class="embed-responsive-item" width="640" height="480"></iframe>
         </div>
-    </div>
+    </section>
 
+    <section id="location" class="text-center">
+        <div class="container">
+            <h2 class="mt-4" id="title-location">Location</h2>
+            <a href="https://www.google.com/maps/place/Guadeloupe/@16.3419869,-61.385459,14.17z/data=!4m6!3m5!1s0x8c0e755a77287d51:0xecbe3e37b74a07ab!8m2!3d16.265!4d-61.551!16zL20vMDM3bm0?entry=ttu" target="_blank">
+                <img src="images/location.jpg" class="img-fluid" alt="Villa Location">
+            </a>
+        </div>
+    </section>
 
-    <!-- Contact Section -->
-    <div class="contact" id="contact">
-        <h3 style="color: #171717; text-align: center; font-size: 20px; text-decoration:underline; margin-top: 30px;" data-aos="fade-up">Contact</h3>
-        <br>
-        <p>Ecrire un mail : <a href="mailto:lyna.hamza16@gmail.com" style="color: #171717; text-decoration:underline;">lyna.hamza16@gmail.com</a></p>
-        <p>N° de téléphone : <a href="tel:+4385302757" style="color: #171717; text-decoration:underline;">4385302757</a></p>
-    </div>
+    <section id="reservation" class="text-center">
+        <div class="container">
+            <h2 class="mt-4" id="title-reservation">Reservation</h2>
+            <p style="color: #333;">200 USD per night</p>
+            <form id="reservation-form" class="bg-light p-4 rounded" onsubmit="validateForm(event)">
+                <div class="form-group">
+                    <label for="first_name" id="label-first-name">First Name:</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last_name" id="label-last-name">Last Name:</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" id="label-email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    <small id="email-error" class="form-text text-danger" style="display: none;"></small>
+                </div>
+                <div class="form-group">
+                    <label for="start_date" id="label-start-date">Start Date:</label>
+                    <input type="date" class="form-control" id="start_date" name="start_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="end_date" id="label-end-date">End Date:</label>
+                    <input type="date" class="form-control" id="end_date" name="end_date" required>
+                    <small id="date-error" class="form-text text-danger" style="display: none;"></small>
+                </div>
+                <div class="form-group">
+                    <label for="message" id="label-message">Message:</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+            </form>
+            <p id="owner-contact">Owner contact information goes here...</p>
+        </div>
+    </section>
 
-    <!-- Bootstrap JS, jQuery, and Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts/validation.js"></script>
 </body>
 </html>
